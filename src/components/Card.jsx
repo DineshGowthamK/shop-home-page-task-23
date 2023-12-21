@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Card({ cart, setCart, data }) {
   const [isAddButton, setIsAddButton] = useState(true);
+  //!The code for the cards
   return (
     <div className="col mb-5">
       <div className="card h-100">
@@ -21,6 +22,7 @@ function Card({ cart, setCart, data }) {
           <div className="text-center">
             <h5 className="fw-bolder">{data.productName}</h5>
             <div className="d-flex justify-content-center small text-warning mb-2">
+              {/* Checking the condition for the Stars for displaying */}
               <div
                 className={
                   data.productName === "Special Item" ||
@@ -62,6 +64,7 @@ function Card({ cart, setCart, data }) {
                 }
               ></div>
             </div>
+            {/* Checking the condition for the displaying the price whether it should be displayed normally or it should have a strike-through */}
             <span
               className={
                 data.isPrice1 ? "text-muted text-decoration-line-through" : ""
@@ -73,6 +76,7 @@ function Card({ cart, setCart, data }) {
           </div>
         </div>
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          {/* Code for toggle between the Add to cart and Remove from cart */}
           <div className="text-center">
             {isAddButton ? (
               <button
@@ -82,7 +86,7 @@ function Card({ cart, setCart, data }) {
                   setIsAddButton(false);
                 }}
               >
-                Add To Cart
+                Add to cart
               </button>
             ) : (
               <button
@@ -92,7 +96,7 @@ function Card({ cart, setCart, data }) {
                   setIsAddButton(true);
                 }}
               >
-                Remove To Cart
+                Remove to cart
               </button>
             )}
           </div>

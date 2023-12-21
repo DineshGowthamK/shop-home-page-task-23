@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import TopBar from "./components/TopBar";
 function App() {
+  //! Hooks concept have been implemented
   let [cart, setCart] = useState(0);
   let data =[
     {
@@ -79,6 +80,7 @@ function App() {
     }
   ]
   return <>
+  {/* Calling the components */}
       <TopBar cart={cart} setCart={setCart}/>
       <Header />
       <section className="py-5">
